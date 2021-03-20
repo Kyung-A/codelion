@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코드라이언 | 조코딩님 자바스크립트 강의</title>
+    <style>
+        .lotto {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 50px;
+            line-height: 90px;
+            color: #fff;
+            text-shadow: 0px 0px 3px rgba(54, 54, 54, 0.685);
+        }
+
+        .lottoNumber1 {
+            background-color: rgb(255, 203, 31);
+        }
+
+        .lottoNumber2 {
+            background-color: rgb(129, 205, 255);
+        }
+
+        .lottoNumber3 {
+            background-color: rgb(255, 129, 129);
+        }
+
+        .lottoNumber4 {
+            background-color: rgb(160, 160, 160);
+        }
+
+        .lottoNumber5 {
+            background-color: rgb(180, 250, 89);
+        }
+
+        .lottoNumber6 {
+            background-color: rgb(129, 205, 255);
+        }
+
+
+        /*게임*/
+
+        .game-bg {
+            position: relative;
+            width: 700px;
+            height: 200px;
+            background-image: url(images/background.png);
+        }
+
+        .game-bg #hpBar {
+            color: #fff;
+            padding-top: 10px;
+            margin-left: 20px;
+        }
+
+        #drone {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 60px;
+            left: 100px;
+            cursor: pointer;
+        }
+
+        #bunker {
+            opacity: 1;
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            top: 30px;
+            right: 100px;
+            transition: all 0.3s;
+        }
+
+        #spit {
+            opacity: 0;
+            position: absolute;
+            width: 50px;
+            height: 30px;
+            top: 90px;
+            left: 60px;
+            z-index: 3;
+        }
+
+        /*기념일 */
+
+        .container{
+            width: 50%;
+            flex-direction: column;
+            text-align: center;
+            border:1px solid #ccc;
+            margin: 100px auto;
+        }
+
+        .box{
+            text-align: center;
+        }
+
+        .box > span.txt{
+            display: block;
+            font-size: 20px;
+            margin: 20px 0px 0px 8px;
+        }
+
+        .box > span#end{
+            display: block;
+            margin-bottom: 20px;
+            font-size: 40px;
+            font-weight: 600;
+        }
+
+        .box > .date{
+            text-align: center;
+        }
+
+        .gray {
+            color: #a0a0a0;
+        }
+
+        .special-day {
+            border-top:1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding: 0px 25px;
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+        }
+
+        .days-left {
+            text-align: right;
+        }
+
+        .date {
+            text-align: right;
+            color: #a0a0a0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>로또번호 추첨기</h1>
+    <script src="lotto.js"></script>
+    <!-- 03.03 주석에대해 알아보기 (왜 무시 되는지가 궁금함) -->
+    <!-- 스크립트 프로그래밍 언어에대해 알아보기 -->
+    <!-- 세미콜론이 어떻게 작동하는지 알아보기 -->
+    <h1>글자수 계산기</h1>
+    <textarea onkeydown="counter();" id="formTextarea" rows="10" cols="50" placeholder="텍스트를 입력하세요."></textarea>
+    <span id="textCount">(0/200)</span>
+    <script src="txtLength.js"></script>
+
+    <h1>미니 스타크래프트</h1>
+    <div class="game-bg">
+        <h3 id="hpBar">HP : 5</h3>
+        <img src="images/drone.png" id="drone" alt="드론" />
+        <img src="images/spit.png" id="spit" alt="공격" />
+        <img src="images/bunker.png" id="bunker" alt="벙커" />
+    </div>
+    <script src="game.js"></script>
+
+
+    <div class="container">
+        <h1>직장인 계산기</h1>
+        <div class="box">
+            <img id="img" src="images/before.jpg" alt="퇴사">
+            <span class="txt">입사한지 2020년 11월 23일로부터</span>
+            <span id="end">0일째</span>
+        </div>
+        <section class="special-day">
+            <h3 class="title">추석 연휴</h3>
+            <div class="date-box">
+                <p id="thanksgiving" class="days-left">0일 남음</p>
+                <p class="date">2021.9.20</p>
+            </div>
+        </section>
+        <section class="special-day">
+            <h3 class="title">퇴사날</h3>
+            <div class="date-box">
+                <p id="resignation" class="days-left">0일 남음</p>
+                <p class="date">2021.11.23</p>
+            </div>
+        </section>
+        <section class="special-day">
+            <h3 class="title">1년 3개월째 되는 날</h3>
+            <div class="date-box">
+                <p id="moneyUp" class="days-left">0일 남음</p>
+                <p id="moneyUp-date" class="date">0000.00.00</p>
+            </div>
+        </section>
+    </div>
+    <script src="dDay.js"></script>
+
+</body>
+
+</html>
